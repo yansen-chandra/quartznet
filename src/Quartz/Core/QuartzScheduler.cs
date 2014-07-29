@@ -835,7 +835,7 @@ namespace Quartz.Core
             return result;
         }
 
-        public void ScheduleJobs(IDictionary<IJobDetail, Collection.ISet<ITrigger>> triggersAndJobs, bool replace)
+        public void ScheduleJobs(IDictionary<IJobDetail, ISet<ITrigger>> triggersAndJobs, bool replace)
         {
             ValidateState();
 
@@ -846,7 +846,7 @@ namespace Quartz.Core
                 {
                     continue;
                 }
-                Collection.ISet<ITrigger> triggers = triggersAndJobs[job];
+                ISet<ITrigger> triggers = triggersAndJobs[job];
                 if (triggers == null) // this is possible because the job may be durable, and not yet be having triggers
                 {
                     continue;
@@ -886,9 +886,9 @@ namespace Quartz.Core
             }
         }
 
-        public void ScheduleJob(IJobDetail jobDetail, Collection.ISet<ITrigger> triggersForJob, bool replace)
+        public void ScheduleJob(IJobDetail jobDetail, ISet<ITrigger> triggersForJob, bool replace)
         {
-            var triggersAndJobs = new Dictionary<IJobDetail, Collection.ISet<ITrigger>>();
+            var triggersAndJobs = new Dictionary<IJobDetail, ISet<ITrigger>>();
             triggersAndJobs.Add(jobDetail, triggersForJob);
             ScheduleJobs(triggersAndJobs, replace);
         }
@@ -1202,7 +1202,7 @@ namespace Quartz.Core
         /// Gets the paused trigger groups.
         /// </summary>
         /// <returns></returns>
-        public virtual Collection.ISet<string> GetPausedTriggerGroups()
+        public virtual ISet<string> GetPausedTriggerGroups()
         {
             return resources.JobStore.GetPausedTriggerGroups();
         }
@@ -1302,7 +1302,7 @@ namespace Quartz.Core
         /// Get the names of all the <see cref="IJob" />s in the
         /// given group.
         /// </summary>
-        public virtual Collection.ISet<JobKey> GetJobKeys(GroupMatcher<JobKey> matcher)
+        public virtual ISet<JobKey> GetJobKeys(GroupMatcher<JobKey> matcher)
         {
             ValidateState();
 
@@ -1346,7 +1346,7 @@ namespace Quartz.Core
         /// Get the names of all the <see cref="ITrigger" />s in
         /// the matching groups.
         /// </summary>
-        public virtual Collection.ISet<TriggerKey> GetTriggerKeys(GroupMatcher<TriggerKey> matcher)
+        public virtual ISet<TriggerKey> GetTriggerKeys(GroupMatcher<TriggerKey> matcher)
         {
             ValidateState();
 
