@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E3A1CE6F-F3BC-4D7C-BB34-0422B463CD4A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CEZ.Tools.QuartzConfigEditor</RootNamespace>
+    <AssemblyName>QuartzConfigEditor</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>quartz-edit.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\DTO\DTOSchedule.cs" />
+    <Compile Include="Entity\NamespaceIgnorantXmlTextReader.cs" />
+    <Compile Include="Entity\QuartzXml\XmlBaseTrigger.cs" />
+    <Compile Include="Entity\QuartzXml\XmlCronTrigger.cs" />
+    <Compile Include="Entity\QuartzXml\XmlJob.cs" />
+    <Compile Include="Entity\QuartzXml\XmlJobEntry.cs" />
+    <Compile Include="Entity\QuartzXml\XmlSchedule.cs" />
+    <Compile Include="Entity\QuartzXml\XmlSimpleTrigger.cs" />
+    <Compile Include="Entity\QuartzXml\XmlTrigger.cs" />
+    <Compile Include="Entity\XTWFND.cs" />
+    <Compile Include="Forms\FrmCronBuilder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCronBuilder.Designer.cs">
+      <DependentUpon>FrmCronBuilder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTriggerEditCron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTriggerEditCron.Designer.cs">
+      <DependentUpon>FrmTriggerEditCron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTriggerEditSimple.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTriggerEditSimple.Designer.cs">
+      <DependentUpon>FrmTriggerEditSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmTriggerList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmTriggerList.Designer.cs">
+      <DependentUpon>FrmTriggerList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\FrmCronBuilder.resx">
+      <DependentUpon>FrmCronBuilder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTriggerEditCron.resx">
+      <DependentUpon>FrmTriggerEditCron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTriggerEditSimple.resx">
+      <DependentUpon>FrmTriggerEditSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmTriggerList.resx">
+      <DependentUpon>FrmTriggerList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Files\quartz_jobs.xml.20150324171806.bak" />
+    <None Include="Files\quartz_jobs.xml.20150324172601.bak" />
+    <None Include="Files\quartz_jobs.xml.20150324172930.bak" />
+    <None Include="Files\quartz_jobs.xml.20150325105603.bak" />
+    <None Include="Files\quartz_jobs.xml.20150325110153.bak" />
+    <None Include="Files\quartz_jobs.xml.20150325110241.bak" />
+    <None Include="Files\quartz_jobs.xml.20150325124344.bak" />
+    <None Include="Files\quartz_jobs.xml.20150325145730.bak" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\quartz_jobs - Copy.xml" />
+    <Content Include="Files\quartz_jobs.xml" />
+    <Content Include="Files\quartz_jobs_cjange.xml" />
+    <Content Include="Files\template.xml" />
+    <Content Include="quartz-edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\CEZ.Core.Infrastructure\CEZ.Core.Infrastructure.csproj">
+      <Project>{e5236c85-f14c-4d69-9349-1b70cd145d20}</Project>
+      <Name>CEZ.Core.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

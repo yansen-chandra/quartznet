@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+  <schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://quartznet.sourceforge.net/JobSchedulingData">
+    <job>
+      <name>EmailJob</name>
+      <group>BatchJob</group>
+      <description>jobDesciption1</description>
+      <job-type>NEC.NCSS.NIS.TaskScheduler.ConsoleApp.SimpleJob, NEC.NCSS.NIS.TaskScheduler.ConsoleApp</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+      <job-data-map>
+        <entry>
+          <key>key0</key>
+          <value>value0</value>
+        </entry>
+        <entry>
+          <key>key1</key>
+          <value>value1</value>
+        </entry>
+        <entry>
+          <key>key2</key>
+          <value>value2</value>
+        </entry>
+      </job-data-map>
+    </job>
+    <job>
+      <name>StatusUpdateJob</name>
+      <group>BatchJob</group>
+      <description>jobDesciption1</description>
+      <job-type>NEC.NCSS.NIS.TaskScheduler.ConsoleApp.SimpleJob, NEC.NCSS.NIS.TaskScheduler.ConsoleApp</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+      <job-data-map>
+        <entry>
+          <key>key0</key>
+          <value>value0</value>
+        </entry>
+        <entry>
+          <key>key1</key>
+          <value>value1</value>
+        </entry>
+        <entry>
+          <key>key2</key>
+          <value>value2</value>
+        </entry>
+      </job-data-map>
+    </job>
+    <trigger>
+      <simple>
+        <name>xmlTrigger1</name>
+        <group>xmljobGroup1</group>
+        <description>SimpleTriggerDescription</description>
+        <job-name>EmailJob</job-name>
+        <job-group>BatchJob</job-group>
+        <start-time>1982-06-28T18:15:00Z</start-time>
+        <end-time>2020-05-04T18:13:51Z</end-time>
+        <misfire-instruction>SmartPolicy</misfire-instruction>
+        <repeat-count>100</repeat-count>
+        <repeat-interval>5000</repeat-interval>
+      </simple>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>xmlCronTrigger1</name>
+        <group>xmlCronjobGroup1</group>
+        <description>Weekly every Tue and Fri 10AM</description>
+        <job-name>EmailJob</job-name>
+        <job-group>BatchJob</job-group>
+        <cron-expression>0 0 10 * * TUE,FRI</cron-expression>
+      </cron>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>xmlCronTrigger2</name>
+        <group>xmlCronjobGroup1</group>
+        <description>this is additional cron trigger</description>
+        <job-name>EmailJob</job-name>
+        <job-group>BatchJob</job-group>
+        <cron-expression>10 0/5 * 1/1 * ? *</cron-expression>
+      </cron>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>xmlCronTrigger1</name>
+        <group>xmlCronjobGroup1</group>
+        <description>Fire every 15 seconds</description>
+        <job-name>StatusUpdateJob</job-name>
+        <job-group>BatchJob</job-group>
+        <cron-expression>0/15 * * * * ?</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>

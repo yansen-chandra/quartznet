@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEZ.Core.Infrastructure", "Core\CEZ.Core.Infrastructure\CEZ.Core.Infrastructure.csproj", "{E5236C85-F14C-4D69-9349-1B70CD145D20}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{DB3519ED-223F-438A-8DEB-21CBD3BB15B8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{86122B1D-1F72-4996-8D67-2CBE33AF1EE8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tools", "Tools", "{3CA8D601-26F7-4C2F-AE93-7DE4FD602BE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CEZ.Tools.QuartzConfigEditor", "Tools\CEZ.Tools.QuartzConfigEditor\CEZ.Tools.QuartzConfigEditor.csproj", "{E3A1CE6F-F3BC-4D7C-BB34-0422B463CD4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E5236C85-F14C-4D69-9349-1B70CD145D20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5236C85-F14C-4D69-9349-1B70CD145D20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5236C85-F14C-4D69-9349-1B70CD145D20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5236C85-F14C-4D69-9349-1B70CD145D20}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A1CE6F-F3BC-4D7C-BB34-0422B463CD4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A1CE6F-F3BC-4D7C-BB34-0422B463CD4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A1CE6F-F3BC-4D7C-BB34-0422B463CD4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A1CE6F-F3BC-4D7C-BB34-0422B463CD4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E5236C85-F14C-4D69-9349-1B70CD145D20} = {DB3519ED-223F-438A-8DEB-21CBD3BB15B8}
+		{E3A1CE6F-F3BC-4D7C-BB34-0422B463CD4A} = {3CA8D601-26F7-4C2F-AE93-7DE4FD602BE4}
+	EndGlobalSection
+EndGlobal

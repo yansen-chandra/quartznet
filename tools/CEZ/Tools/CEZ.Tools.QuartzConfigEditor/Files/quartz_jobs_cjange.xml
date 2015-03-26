@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<job-scheduling-data xmlns="http://quartznet.sourceforge.net/JobSchedulingData" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0">
+  <processing-directives>
+    <overwrite-existing-data>true</overwrite-existing-data>
+  </processing-directives>
+  <schedule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://quartznet.sourceforge.net/JobSchedulingData">
+    <job>
+      <name>xmljobName1</name>
+      <group>xmljobGroup1</group>
+      <description>jobDesciption1</description>
+      <job-type>NEC.NCSS.NIS.TaskScheduler.ConsoleApp.SimpleJob, NEC.NCSS.NIS.TaskScheduler.ConsoleApp</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+      <job-data-map>
+        <entry>
+          <key>key0</key>
+          <value>value0</value>
+        </entry>
+        <entry>
+          <key>key1</key>
+          <value>value1</value>
+        </entry>
+        <entry>
+          <key>key2</key>
+          <value>value2</value>
+        </entry>
+      </job-data-map>
+      <Triggers>
+        <XmlTrigger>
+          <simple>
+            <name>xmlTrigger1</name>
+            <group>xmljobGroup1</group>
+            <description>SimpleTriggerDescription</description>
+            <job-name>xmljobName1</job-name>
+            <job-group>xmljobGroup1</job-group>
+            <start-time>1983-06-16T18:15:00</start-time>
+            <end-time>2021-05-13T18:13:51</end-time>
+            <misfire-instruction>SmartPolicy</misfire-instruction>
+            <repeat-count>50</repeat-count>
+            <repeat-interval>4000</repeat-interval>
+          </simple>
+        </XmlTrigger>
+        <XmlTrigger>
+          <cron>
+            <name>xmlCronTrigger1</name>
+            <group>xmlCronjobGroup1</group>
+            <description>A cron description</description>
+            <job-name>xmljobName1</job-name>
+            <job-group>xmljobGroup1</job-group>
+            <cron-expression>0 0/1 * 1/1 * ? *</cron-expression>
+          </cron>
+        </XmlTrigger>
+      </Triggers>
+    </job>
+    <job>
+      <name>xmljobName2</name>
+      <group>xmljobGroup1</group>
+      <description>jobDesciption1</description>
+      <job-type>NEC.NCSS.NIS.TaskScheduler.ConsoleApp.SimpleJob, NEC.NCSS.NIS.TaskScheduler.ConsoleApp</job-type>
+      <durable>true</durable>
+      <recover>false</recover>
+      <job-data-map>
+        <entry>
+          <key>key0</key>
+          <value>value0</value>
+        </entry>
+        <entry>
+          <key>key1</key>
+          <value>value1</value>
+        </entry>
+        <entry>
+          <key>key2</key>
+          <value>value2</value>
+        </entry>
+      </job-data-map>
+      <Triggers>
+        <XmlTrigger>
+          <cron>
+            <name>xmlCronTrigger1</name>
+            <group>xmlCronjobGroup1</group>
+            <description>A cron description</description>
+            <job-name>xmljobName2</job-name>
+            <job-group>xmljobGroup1</job-group>
+            <cron-expression>0 0/1 * 1/1 * ? *</cron-expression>
+          </cron>
+        </XmlTrigger>
+      </Triggers>
+    </job>
+    <trigger>
+      <simple>
+        <name>xmlTrigger1</name>
+        <group>xmljobGroup1</group>
+        <description>SimpleTriggerDescription</description>
+        <job-name>xmljobName1</job-name>
+        <job-group>xmljobGroup1</job-group>
+        <start-time>1983-06-16T18:15:00</start-time>
+        <end-time>2021-05-13T18:13:51</end-time>
+        <misfire-instruction>SmartPolicy</misfire-instruction>
+        <repeat-count>50</repeat-count>
+        <repeat-interval>4000</repeat-interval>
+      </simple>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>xmlCronTrigger1</name>
+        <group>xmlCronjobGroup1</group>
+        <description>A cron description</description>
+        <job-name>xmljobName1</job-name>
+        <job-group>xmljobGroup1</job-group>
+        <cron-expression>0 0/1 * 1/1 * ? *</cron-expression>
+      </cron>
+    </trigger>
+    <trigger>
+      <cron>
+        <name>xmlCronTrigger1</name>
+        <group>xmlCronjobGroup1</group>
+        <description>A cron description</description>
+        <job-name>xmljobName2</job-name>
+        <job-group>xmljobGroup1</job-group>
+        <cron-expression>0 0/1 * 1/1 * ? *</cron-expression>
+      </cron>
+    </trigger>
+  </schedule>
+</job-scheduling-data>
